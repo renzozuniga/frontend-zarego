@@ -2,7 +2,8 @@ import axios from "axios";
 
 const getCountries = async (page, rows, list) => {
   try {
-    let url = `${process.env.REACT_APP_BACKEND_ZAREGO}api/countries?page=${page}&rows=${rows}`;
+    //let url = `${process.env.REACT_APP_BACKEND_ZAREGO}api/countries?page=${page}&rows=${rows}`;
+    let url = `http://44.211.157.217/api/countries?page=${page}&rows=${rows}`;
     if (list) {
       url += `&list=${list}`;
     }
@@ -22,7 +23,7 @@ const getCountries = async (page, rows, list) => {
 const getAllCountries = async (list) => {
   try {
     const response = await axios.get(
-      `${process.env.REACT_APP_BACKEND_ZAREGO}api/countries/all?list=${list}`,
+      `http://44.211.157.217/api/countries/all?list=${list}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +40,7 @@ const getAllCountries = async (list) => {
 const getCountriesOptions = async () => {
   try {
     const response = await axios.get(
-      `${process.env.REACT_APP_BACKEND_ZAREGO}api/countries/options`,
+      `http://44.211.157.217/api/countries/options`,
       {
         headers: {
           "Content-Type": "application/json",
